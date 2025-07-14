@@ -32,7 +32,7 @@ public class ProductController {
     /**
      * PUT - Fully update an existing product by ID
      */
-    @PutMapping("/{id}")
+    @PutMapping()
     public ResponseEntity<String> updateProduct(@RequestBody @Validated(ProductRequestDTO.Update.class) ProductRequestDTO productRequestDTO) {
         log.info("request body {}", productRequestDTO.toString());
         return ResponseEntity.ok("PRODUCT UPDATED");
@@ -41,7 +41,7 @@ public class ProductController {
     /**
      * PATCH - Partially update an existing product by ID
      */
-    @PatchMapping("/{id}")
+    @PatchMapping()
     public ResponseEntity<String> partialUpdateProduct(@RequestBody @Validated(ProductRequestDTO.PartialUpdate.class) ProductRequestDTO productRequestDTO) {
         log.info("request body {}", productRequestDTO.toString());
         return ResponseEntity.ok("PRODUCT PARTIAL UPDATED");
